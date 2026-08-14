@@ -1,0 +1,75 @@
+<html><head><meta charset='utf-8'><style>body{font-family:Segoe UI,Meiryo,sans-serif;margin:28px;color:#111}
+h1{font-size:19px;border-bottom:2px solid #111;padding-bottom:6px}
+h2{font-size:14px;margin:22px 0 4px}
+p.d{font-size:11px;color:#444;margin:0 0 6px}
+pre{background:#f5f5f5;border:1px solid #ddd;padding:9px;font-size:9px;
+    white-space:pre-wrap;word-break:break-all;font-family:Consolas,monospace;line-height:1.35}
+section{break-inside:avoid}
+.h{font-size:11px;color:#444;margin-bottom:14px}</style></head><body><h1>Conditional evidence — Personal Upload Scheduler</h1><p class='h'>Google Cloud project 49718646075 (yoake-archives-uploader) &middot; Use case: video uploading and account management &middot; OAuth 2.0: yes</p><section><h2>1. OAuth 2.0 scopes requested by the client</h2><p class="d">Declared in <code>_pipeline/youtube_uploader.py</code>. These are the only scopes the client ever requests. Access can be revoked by the operator at <b>https://myaccount.google.com/permissions</b>.</p><pre>SCOPES = [
+    &quot;https://www.googleapis.com/auth/youtube.upload&quot;,
+    &quot;https://www.googleapis.com/auth/youtube&quot;,
+    &quot;https://www.googleapis.com/auth/youtube.force-ssl&quot;,
+]</pre></section><section><h2>2. Upload interface — step 1 of 3: dry run (no API call)</h2><p class="d">The client is a command-line tool. Before any upload, <code>--dry-run</code> prints the exact request body without contacting the API, so the operator can review it.</p><pre>[09:21:30] 対象 1 件： EP_E08_short
+[09:21:30]   - EP_E08_short: &#x27;上司の日本語が悩ましい1on1【交流】｜今月の1on1 #8 #shorts&#x27; privacy=private publishAt=2026-08-28T10:00:00Z synthetic=True playlist=なし
+[09:21:30] --dry-run のため、ここで終了します（APIは叩いていません）
+{
+  &quot;EP_E08_short&quot;: {
+    &quot;snippet&quot;: {
+      &quot;title&quot;: &quot;上司の日本語が悩ましい1on1【交流】｜今月の1on1 #8 #shorts&quot;,
+      &quot;description&quot;: &quot;1on1で「交わります」と言われただけなんだが。\n\n────\n上司「今月の1on1。ライゲツから、ワタシの部署とキミの部署が、交わります」\n部下「ま、まじわ……る？」\n────\n\n「今月の1on1」は、上司が業務の話しかしていないのに\n部下が全部とんでもない方向に解釈していくコントシリーズです。\n\n上司は、最初から最後まで一度も間違えていません。\n\n※AI音声・AI生成静止画を含みます。\n効果音：OtoLogic（CC BY 4.0）https://otologic.jp\n音声合成：ElevenLabs / OpenAI\n\n#ショートコント #1on1 #会社あるある #すれ違い&quot;,
+      &quot;tags&quot;: [
+        &quot;ショートコント&quot;,
+        &quot;1on1&quot;,
+        &quot;会社あるある&quot;,
+        &quot;すれ違い&quot;,
+        &quot;性態学研究所&quot;,
+        &quot;コント&quot;,
+        &quot;上司&quot;,
+        &quot;部下&quot;,
+        &quot;勘違い&quot;,
+        &quot;オフィスコント&quot;,
+        &quot;交流&quot;,
+        &quot;人事交流&quot;,
+        &quot;外国人上司&quot;,
+        &quot;日本語&quot;
+      ],
+      &quot;categoryId&quot;: &quot;23&quot;,
+      &quot;defaultLanguage&quot;: &quot;ja&quot;,
+      &quot;defaultAudioLanguage&quot;: &quot;ja&quot;
+    },
+    &quot;status&quot;: {
+      &quot;privacyStatus&quot;: &quot;private&quot;,
+      &quot;selfDeclaredMadeForKids&quot;: false,
+      &quot;containsSyntheticMedia&quot;: true,
+      &quot;publishAt&quot;: &quot;2026-08-28T10:00:00Z&quot;
+    },
+    &quot;_playlistItems&quot;: []
+  }
+}
+</pre></section><section><h2>3. Upload interface — step 2 of 3: actual upload</h2><p class="d">The client first verifies that the OAuth token belongs to the expected channel, then uploads the video file and sets the custom thumbnail.</p><pre>$ python _pipeline/youtube_uploader.py 06_edit/EP_E08/EP_E08_upload_config.json --token token_channel_e.pickle
+
+[05:27:17] 投稿先チャンネルの照合: トークン=『性態学研究所』(UCg01dhonsMD9FEPm6dr14Pw) / 期待=『性態学研究所』(UCg01dhonsMD9FEPm6dr14Pw)
+[05:27:30]     100% 完了  videoId=UKhu15sn-pY
+[05:27:30]   サムネイルを設定: EP_E08_thumb.jpg
+[05:27:34] 新規 1 / スキップ 0 / 失敗 0</pre></section><section><h2>4. Upload interface — step 3 of 3: result read back from the API</h2><p class="d">The uploaded video, read back with <code>videos.list</code>. It is private and scheduled to publish at the requested time. All content is owned by the operator.</p><pre>{
+  &quot;id&quot;: &quot;UKhu15sn-pY&quot;,
+  &quot;snippet&quot;: {
+    &quot;title&quot;: &quot;上司の日本語が悩ましい1on1【交流】｜今月の1on1 #8 #shorts&quot;,
+    &quot;categoryId&quot;: &quot;23&quot;,
+    &quot;tags&quot;: [
+      &quot;1on1&quot;,
+      &quot;すれ違い&quot;,
+      &quot;オフィスコント&quot;,
+      &quot;コント&quot;,
+      &quot;ショートコント&quot;,
+      &quot;上司&quot;,
+      &quot;...&quot;
+    ]
+  },
+  &quot;status&quot;: {
+    &quot;privacyStatus&quot;: &quot;private&quot;,
+    &quot;publishAt&quot;: &quot;2026-08-28T10:00:00Z&quot;,
+    &quot;madeForKids&quot;: false,
+    &quot;selfDeclaredMadeForKids&quot;: false
+  }
+}</pre></section></body></html>

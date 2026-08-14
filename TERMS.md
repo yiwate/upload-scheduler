@@ -1,10 +1,10 @@
-# Terms of Service — Personal Upload Scheduler
+# Terms of Service — Yoake Uploader
 
 Last updated: 14 August 2026
 
 ## 1. What this document covers
 
-Personal Upload Scheduler ("the tool") is a private command-line application written and
+Yoake Uploader ("the tool") is a private command-line application written and
 used by one individual ("the operator") to publish the operator's own videos to the
 operator's own YouTube channels.
 

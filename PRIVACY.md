@@ -1,10 +1,10 @@
-# Privacy Policy — Personal Upload Scheduler
+# Privacy Policy — Yoake Uploader
 
 Last updated: 14 August 2026
 
 ## Who this covers
 
-Personal Upload Scheduler ("the tool") is a private command-line application used by a
+Yoake Uploader ("the tool") is a private command-line application used by a
 single individual to publish their own videos to their own YouTube channels. The tool is
 not distributed and has no users other than its author.
 

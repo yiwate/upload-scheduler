@@ -1,0 +1,37 @@
+[09:21:30] 対象 1 件： EP_E08_short
+[09:21:30]   - EP_E08_short: '上司の日本語が悩ましい1on1【交流】｜今月の1on1 #8 #shorts' privacy=private publishAt=2026-08-28T10:00:00Z synthetic=True playlist=なし
+[09:21:30] --dry-run のため、ここで終了します（APIは叩いていません）
+{
+  "EP_E08_short": {
+    "snippet": {
+      "title": "上司の日本語が悩ましい1on1【交流】｜今月の1on1 #8 #shorts",
+      "description": "1on1で「交わります」と言われただけなんだが。\n\n────\n上司「今月の1on1。ライゲツから、ワタシの部署とキミの部署が、交わります」\n部下「ま、まじわ……る？」\n────\n\n「今月の1on1」は、上司が業務の話しかしていないのに\n部下が全部とんでもない方向に解釈していくコントシリーズです。\n\n上司は、最初から最後まで一度も間違えていません。\n\n※AI音声・AI生成静止画を含みます。\n効果音：OtoLogic（CC BY 4.0）https://otologic.jp\n音声合成：ElevenLabs / OpenAI\n\n#ショートコント #1on1 #会社あるある #すれ違い",
+      "tags": [
+        "ショートコント",
+        "1on1",
+        "会社あるある",
+        "すれ違い",
+        "性態学研究所",
+        "コント",
+        "上司",
+        "部下",
+        "勘違い",
+        "オフィスコント",
+        "交流",
+        "人事交流",
+        "外国人上司",
+        "日本語"
+      ],
+      "categoryId": "23",
+      "defaultLanguage": "ja",
+      "defaultAudioLanguage": "ja"
+    },
+    "status": {
+      "privacyStatus": "private",
+      "selfDeclaredMadeForKids": false,
+      "containsSyntheticMedia": true,
+      "publishAt": "2026-08-28T10:00:00Z"
+    },
+    "_playlistItems": []
+  }
+}

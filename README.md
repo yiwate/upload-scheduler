@@ -1,4 +1,4 @@
-# Personal Upload Scheduler
+# Yoake Uploader
 
 A private command-line tool used by one person to publish their own videos to their own
 YouTube channels.
