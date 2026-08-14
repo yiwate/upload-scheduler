@@ -11,10 +11,15 @@ not distributed and has no users other than its author.
 ## What the tool uses
 
 The tool uses **YouTube API Services**. By using it, its operator is agreeing to the
-[YouTube Terms of Service](https://www.youtube.com/t/terms).
+YouTube Terms of Service.
 
-Google's handling of data is described in the
-[Google Privacy Policy](https://policies.google.com/privacy).
+Google's handling of data is described in the Google Privacy Policy.
+
+| Document | URL |
+|---|---|
+| **YouTube Terms of Service** | **https://www.youtube.com/t/terms** |
+| **Google Privacy Policy** | **https://policies.google.com/privacy** |
+| **Revoke this tool's access** | **https://myaccount.google.com/permissions** |
 
 ## What data the tool accesses
 
@@ -40,7 +45,7 @@ other than Google's own API endpoints during authentication and API calls.
 ## Revoking access
 
 Access granted to this tool can be revoked at any time at
-[https://myaccount.google.com/permissions](https://myaccount.google.com/permissions).
+**https://myaccount.google.com/permissions**
 
 ## Data retention and deletion
 

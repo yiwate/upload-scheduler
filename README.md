@@ -55,10 +55,11 @@ This tool uses **YouTube API Services**.
 
 - **[Privacy policy](PRIVACY.md)**
 - **[Terms of service](TERMS.md)**
-- [YouTube Terms of Service](https://www.youtube.com/t/terms)
-- [Google Privacy Policy](https://policies.google.com/privacy)
-- Revoke this tool's access to a Google Account:
-  [https://myaccount.google.com/permissions](https://myaccount.google.com/permissions)
+| Document | URL |
+|---|---|
+| **YouTube Terms of Service** | **https://www.youtube.com/t/terms** |
+| **Google Privacy Policy** | **https://policies.google.com/privacy** |
+| **Revoke this tool's access** | **https://myaccount.google.com/permissions** |
 
 ## Contact
 

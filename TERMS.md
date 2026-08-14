@@ -18,12 +18,13 @@ These terms therefore describe the operator's own use of the tool.
 
 The tool uses **YouTube API Services**.
 
-By using the tool, the operator agrees to be bound by the
-[YouTube Terms of Service](https://www.youtube.com/t/terms).
+By using the tool, the operator agrees to be bound by the YouTube Terms of Service, and
+to the Google Privacy Policy, which describes how Google handles data.
 
-The operator also agrees to the
-[Google Privacy Policy](https://policies.google.com/privacy), which describes how Google
-handles data.
+| Document | URL |
+|---|---|
+| **YouTube Terms of Service** | **https://www.youtube.com/t/terms** |
+| **Google Privacy Policy** | **https://policies.google.com/privacy** |
 
 ## 3. Permitted use
 
@@ -69,7 +70,7 @@ or implied, because it is not supplied to anyone.
 
 The operator may stop using the tool at any time and may revoke its access to the
 operator's Google Account at
-[https://myaccount.google.com/permissions](https://myaccount.google.com/permissions).
+**https://myaccount.google.com/permissions**
 
 ## 9. Changes
 
